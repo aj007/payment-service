@@ -1,4 +1,4 @@
-package com.egov.profileservice;
+package com.egov.paymentservice;
 
 
 import io.swagger.v3.oas.models.OpenAPI;

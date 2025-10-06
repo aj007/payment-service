@@ -1,4 +1,4 @@
-package com.egov.profileservice;
+package com.egov.paymentservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;
@@ -12,6 +12,7 @@ public class AppConfig
 {
     @Autowired
     EurekaDiscoveryClient discoveryClient;
+
 
     @Bean
     @Scope("prototype")
