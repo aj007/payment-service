@@ -1,4 +1,4 @@
-package com.egov.paymentservice;
+package com.anupa.paymentservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;

@@ -1,4 +1,4 @@
-package com.egov.paymentservice;
+package com.anupa.paymentservice;
 
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 import io.github.resilience4j.retry.RetryConfig;

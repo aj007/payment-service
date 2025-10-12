@@ -1,4 +1,4 @@
-package com.egov.paymentservice;
+package com.anupa.paymentservice;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.egov.paymentservice;
+package com.anupa.paymentservice;
 
 
 import io.swagger.v3.oas.models.OpenAPI;
@@ -15,8 +15,8 @@ public class SwaggerConfig {
                 return new OpenAPI()
                         .info(
                                 new Info()
-                                        .title("Social-Service Rest Api")
-                                        .description("Rest Api for Social Service of Egov")
+                                        .title("Payment-Service Rest Api")
+                                        .description("Rest Api for Payment Service for msa")
                                         .version("1.0"));
         }
 }

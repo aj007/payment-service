@@ -1,4 +1,4 @@
-package com.egov.paymentservice;
+package com.anupa.paymentservice;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

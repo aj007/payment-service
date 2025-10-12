@@ -1,4 +1,4 @@
-package com.egov.paymentservice;
+package com.anupa.paymentservice;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

@@ -1,4 +1,4 @@
-package com.egov.paymentservice;
+package com.anupa.paymentservice;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -11,7 +11,7 @@ public class Payment {
 
     @Id
     String id;
-    String projectId;
+    String orderId;
     String payerPhone;
     Integer amount;
     String status; // PENDING, COMPLETED, FAILED

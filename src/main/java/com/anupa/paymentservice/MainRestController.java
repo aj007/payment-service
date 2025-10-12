@@ -1,4 +1,4 @@
-package com.egov.paymentservice;
+package com.anupa.paymentservice;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,18 +18,18 @@ public class MainRestController {
     @Autowired
     PaymentRepository paymentRepository;
 
-    @PostMapping("payment/create/{projectid}/{amount}") // Payments should be mapped to Order Id not to Project Id!!!
-    ResponseEntity<?> createPayment(@PathVariable("projectid") String projectId,
+    @PostMapping("payment/create/{orderid}/{amount}") // Payments should be mapped to Order Id not to Project Id!!!
+    ResponseEntity<?> createPayment(@PathVariable("orderid") String orderid,
                                     @PathVariable("amount") Integer amount,
                                     Payment payment, // invoked by project service
                                     @RequestHeader("Authorization") String token) throws InterruptedException {
 
-        logger.info("Request received to float project");
+        logger.info("Request received for order payment against order {} for amount {}: ",orderid,amount);
         // TOKEN VALIDATION IS REQUIRED
         //Optional<String> token =  Optional.ofNullable(tokenService.getAuthCookieValue(request));
-        logger.info("Token extracted to float project {}: ",token);
+        logger.info("Token extracted for order payment {}: ",token);
         Optional<String> principal =  Optional.ofNullable(tokenService.validateToken(token));
-        logger.info("Principal extracted to float project {}: ",principal);
+        logger.info("Principal extracted for order payment {}: ",principal);
         // Validate the token (omitted for brevity)
 
         if(principal.isPresent())
@@ -37,12 +37,12 @@ public class MainRestController {
             Thread.sleep(10000);
 
             payment.setPayerPhone(principal.get());
-            payment.setProjectId(projectId);
+            payment.setOrderId(orderid);
             payment.setStatus("PENDING");
             payment.setAmount(amount);
             Payment savedPayment = paymentRepository.save(payment);
 
-            logger.info("Saved Payment with id {} against project {}: ",savedPayment.getId(),projectId);
+            logger.info("Saved Payment with id {} against order {}: ",savedPayment.getId(),orderid);
 
             return ResponseEntity.ok().body(savedPayment.getId());
         }
